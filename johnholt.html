@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a80f19">
+  <meta name="description" content="Discover John Holt's engineering, energy, marine, safety, logistics and project solutions across Nigeria.">
+  <title>John Holt | Built on Trust. Ready for Tomorrow.</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --red: #a80f19;
+      --red-dark: #790b13;
+      --ink: #202020;
+      --muted: #686868;
+      --paper: #f7f5f1;
+      --white: #fff;
+      --line: #e8e4de;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: var(--sans); line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--red); font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 1px; background: currentColor; content: ""; }
+    .section-heading { max-width: 660px; margin-bottom: 38px; }
+    .section-heading h2 { margin: 12px 0; font: 400 clamp(2.1rem, 4vw, 3.6rem)/1.08 var(--serif); letter-spacing: -.035em; }
+    .section-heading p { max-width: 560px; margin: 0; color: var(--muted); }
+
+    .topline { padding: 9px 0; color: #fff; background: var(--red-dark); font-size: .76rem; }
+    .topline-inner { display: flex; justify-content: space-between; gap: 16px; }
+    .topline a { text-decoration: none; }
+    .header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgba(0,0,0,.06); background: rgba(255,255,255,.97); }
+    .nav-wrap { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand img { width: 200px; height: auto; }
+    .nav-links { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 34px); margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: #363636; font-size: .86rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--red); }
+    .nav-links .nav-cta { padding: 12px 17px; color: #fff; background: var(--red); }
+    .nav-links .nav-cta:hover, .nav-links .nav-cta:focus-visible { color: #fff; background: var(--red-dark); }
+    .menu-toggle { display: none; padding: 10px; border: 1px solid var(--line); color: var(--ink); background: #fff; cursor: pointer; }
+
+    .hero { position: relative; overflow: hidden; min-height: 590px; display: grid; align-items: center; background: #f3f0eb; }
+    .hero::before { position: absolute; inset: 0 0 0 39%; background: linear-gradient(90deg, #f3f0eb 0%, rgba(243,240,235,.92) 7%, rgba(243,240,235,.1) 43%, rgba(20,17,16,.08) 100%), url("assets/construction-site.webp") center 47%/cover no-repeat; content: ""; }
+    .hero-inner { position: relative; z-index: 1; padding-block: 92px 100px; }
+    .hero-copy { max-width: 600px; }
+    .hero h1 { margin: 18px 0; font: 400 clamp(3.3rem, 7vw, 6.2rem)/.99 var(--serif); letter-spacing: -.055em; }
+    .hero h1 span { color: var(--red); }
+    .hero-copy > p { max-width: 480px; margin: 0; color: #555; font-size: 1.06rem; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 1px solid var(--red); color: #fff; background: var(--red); font-size: .83rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--red-dark); }
+    .button-outline { color: var(--ink); border-color: #bcb7b0; background: transparent; }
+    .button-outline:hover { color: #fff; border-color: var(--red); background: var(--red); }
+    .hero-caption { position: absolute; right: 0; bottom: 0; padding: 11px 22px; color: #fff; background: var(--red); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+
+    .intro { padding: 76px 0; }
+    .intro-grid { display: grid; grid-template-columns: .75fr 1.6fr 1.1fr; align-items: center; gap: 32px; }
+    .intro-mark { display: grid; width: 144px; aspect-ratio: 1; place-items: center; border: 1px solid #ead3d4; border-radius: 50%; color: var(--red); font: 400 1.9rem var(--serif); }
+    .intro-text h2 { max-width: 630px; margin: 0 0 14px; font: 400 clamp(1.8rem, 3vw, 2.8rem)/1.15 var(--serif); }
+    .intro-text p { max-width: 610px; margin: 0; color: var(--muted); }
+    .intro-text p + p { margin-top: 12px; }
+    .intro-note { padding: 20px 0 20px 22px; border-left: 2px solid var(--red); color: #4d4d4d; font: italic 1.15rem/1.55 var(--serif); }
+
+    .business { padding: 88px 0; background: var(--paper); }
+    .business-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .business-top .section-heading { margin-bottom: 38px; }
+    .text-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 45px; color: var(--red); font-size: .85rem; font-weight: 700; text-decoration: none; }
+    .business-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .business-card { position: relative; min-height: 280px; overflow: hidden; color: #fff; background: #393939; text-decoration: none; }
+    .business-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .business-card .business-card-secondary { z-index: 1; inset: 16px 16px auto auto; width: 38%; height: 42%; border: 3px solid #fff; background: #fff; object-fit: contain; box-shadow: 0 4px 16px rgba(0,0,0,.3); }
+    .business-card::after { position: absolute; inset: 25% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.8)); content: ""; }
+    .business-card:hover img { transform: scale(1.055); }
+    .business-card-content { position: absolute; z-index: 2; right: 24px; bottom: 23px; left: 24px; }
+    .business-card-content span { display: block; margin-bottom: 6px; color: #f0b7b9; font-size: .69rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .business-card h3 { margin: 0 0 4px; font: 400 1.65rem var(--serif); }
+    .business-card p { max-width: 330px; margin: 0; color: rgba(255,255,255,.82); font-size: .84rem; }
+
+    .heritage { padding: 96px 0; }
+    .heritage-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
+    .heritage-image { position: relative; min-height: 480px; }
+    .heritage-image img { width: 100%; height: 480px; object-fit: cover; }
+    .heritage-badge { position: absolute; right: -24px; bottom: 24px; width: 158px; padding: 19px; color: #fff; background: var(--red); }
+    .heritage-badge strong { display: block; font: 400 2.5rem/1 var(--serif); }
+    .heritage-badge span { display: block; margin-top: 8px; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .heritage-copy h2 { margin: 14px 0 18px; font: 400 clamp(2.4rem, 4vw, 4rem)/1.05 var(--serif); letter-spacing: -.04em; }
+    .heritage-copy p { color: var(--muted); }
+    .heritage-points { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; margin-top: 28px; }
+    .heritage-point { padding-top: 15px; border-top: 1px solid var(--line); }
+    .heritage-point strong { display: block; color: var(--red); font: 400 1.12rem var(--serif); }
+    .heritage-point span { display: block; margin-top: 4px; color: var(--muted); font-size: .8rem; }
+
+    .leadership { padding: 88px 0 96px; background: #f5f3ef; }
+    .leadership .section-heading { margin-bottom: 30px; }
+    .people-tabs { display: flex; gap: 7px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .people-tab { position: relative; padding: 12px 19px; border: 0; color: #777; background: transparent; font-size: .9rem; font-weight: 700; cursor: pointer; }
+    .people-tab[aria-selected="true"] { color: var(--red); }
+    .people-tab[aria-selected="true"]::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 2px; background: var(--red); content: ""; }
+    .people-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .people-grid[hidden] { display: none; }
+    .person-card { overflow: hidden; background: #fff; }
+    .person-card[hidden] { display: none; }
+    .person-card img { width: 100%; height: 276px; object-fit: cover; object-position: center 25%; background: #e2dfd9; }
+    .person-info { padding: 18px 18px 20px; }
+    .person-info h3 { margin: 0; font: 400 1.24rem var(--serif); }
+    .person-info p { margin: 4px 0 0; color: var(--muted); font-size: .8rem; }
+    .roster-note { max-width: 760px; margin: 23px 0 0; color: #74716d; font-size: .78rem; }
+    .leadership-toggle { margin-top: 22px; cursor: pointer; }
+
+    .products { padding: 88px 0; background: var(--paper); }
+    .products .section-heading { max-width: 740px; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .product-card { overflow: hidden; margin: 0; border: 1px solid var(--line); background: #fff; }
+    .product-card img { width: 100%; height: 220px; object-fit: cover; }
+    .product-card-images { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); }
+    .product-card-images img { height: 220px; object-fit: contain; background: #fff; }
+    .product-card figcaption { padding: 17px 19px 20px; }
+    .product-card strong { display: block; color: var(--ink); font: 400 1.25rem var(--serif); }
+    .product-card span { display: block; margin-top: 5px; color: var(--muted); font-size: .8rem; }
+
+    .partners { padding: 68px 0; border-top: 1px solid var(--line); background: #fff; }
+    .partners-heading { margin: 0 0 28px; color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
+    .partners-description { max-width: 650px; margin: -14px auto 30px; color: var(--muted); font-size: .92rem; text-align: center; }
+    .partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; gap: 20px; }
+    .partner-logo { display: grid; min-height: 174px; grid-template-rows: 84px auto; place-items: center; gap: 12px; margin: 0; padding: 22px; border: 1px solid #eee9e3; border-radius: 12px; background: linear-gradient(145deg, #fff, #fbfaf8); text-align: center; box-shadow: 0 8px 24px rgba(32,32,32,.06); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .partner-logo:hover { transform: translateY(-3px); border-color: #e5d5d3; box-shadow: 0 14px 30px rgba(32,32,32,.1); }
+    .partner-logo img { width: min(100%, 220px); height: 84px; object-fit: contain; }
+    .partner-logo figcaption { color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .partner-wordmark { display: grid; width: 100%; height: 84px; place-items: center; color: var(--red); font: 700 1.45rem/1.1 var(--serif); }
+
+    .impact { padding: 86px 0; color: #fff; background: var(--red-dark); }
+    .impact-grid { display: grid; grid-template-columns: 1.2fr repeat(3, 1fr); align-items: center; gap: 30px; }
+    .impact-lead .eyebrow { color: #f2b9bb; }
+    .impact-lead h2 { max-width: 340px; margin: 14px 0 0; font: 400 clamp(2rem, 3vw, 3rem)/1.1 var(--serif); }
+    .impact-stat { min-height: 104px; padding-left: 22px; border-left: 1px solid rgba(255,255,255,.3); }
+    .impact-stat strong { display: block; font: 400 1.5rem var(--serif); }
+    .impact-stat span { display: block; max-width: 180px; margin-top: 8px; color: rgba(255,255,255,.73); font-size: .8rem; }
+    .impact-stat strong span { display: inline; max-width: none; margin: 0; color: inherit; font: inherit; }
+
+    .careers { padding: 88px 0; background: var(--paper); }
+    .careers .section-heading { max-width: 720px; }
+    .career-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .career-card { padding: 30px; border-top: 3px solid var(--red); background: #fff; }
+    .career-card h3 { margin: 0 0 10px; font: 400 1.7rem var(--serif); }
+    .career-card p { max-width: 500px; margin: 0; color: var(--muted); }
+    .career-card .text-link { margin: 20px 0 0; }
+    .careers-toggle { margin-top: 22px; cursor: pointer; }
+    .career-details[hidden] { display: none; }
+
+    .contact { padding: 92px 0; }
+    .contact-panel { display: grid; grid-template-columns: 1.2fr .8fr; gap: 48px; padding: clamp(28px, 5vw, 58px); background: var(--paper); }
+    .contact-panel h2 { max-width: 550px; margin: 12px 0; font: 400 clamp(2.3rem, 4vw, 3.5rem)/1.05 var(--serif); }
+    .contact-panel p { max-width: 500px; margin: 0; color: var(--muted); }
+    .contact-details { display: grid; align-content: center; gap: 19px; }
+    .contact-item { padding-bottom: 14px; border-bottom: 1px solid #ddd8d0; }
+    .contact-item span { display: block; margin-bottom: 5px; color: var(--muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .contact-item a { color: var(--ink); font-size: .97rem; font-weight: 700; text-decoration: none; }
+    .contact-item a:hover { color: var(--red); }
+
+    .footer { padding: 48px 0 20px; color: #fff; background: #202020; }
+    .footer-main { display: flex; justify-content: space-between; gap: 40px; padding-bottom: 40px; }
+    .footer-brand img { width: 184px; padding: 5px; background: #fff; }
+    .footer-brand p { max-width: 310px; color: #bdbdbd; font-size: .83rem; }
+    .footer-links { display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 10px 38px; align-content: start; }
+    .footer-links a { color: #d3d3d3; font-size: .82rem; text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 17px; border-top: 1px solid #444; color: #aaa; font-size: .74rem; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: .78rem; }
+      .brand img { width: 170px; }
+      .hero::before { left: 30%; opacity: .82; }
+      .intro-grid { grid-template-columns: 120px 1fr; gap: 28px; }
+      .intro-note { grid-column: 2; }
+      .business-grid { grid-template-columns: repeat(2, 1fr); }
+      .people-grid { grid-template-columns: repeat(3, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .career-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 74px; }
+      .container { width: min(100% - 36px, 520px); }
+      .topline { font-size: .69rem; }
+      .topline-inner { justify-content: center; }
+      .topline-inner > span:first-child { display: none; }
+      .nav-wrap { min-height: 70px; }
+      .brand img { width: 158px; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; }
+      .menu-toggle span { font-size: .78rem; font-weight: 700; }
+      .nav-links { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 18px 18px; border-bottom: 1px solid var(--line); background: #fff; }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { display: block; padding: 12px 8px; font-size: .9rem; }
+      .nav-links .nav-cta { margin-top: 6px; padding-inline: 14px; }
+      .hero { min-height: 620px; align-items: end; }
+      .hero::before { inset: 0; background: linear-gradient(90deg, rgba(247,245,241,.96), rgba(247,245,241,.81) 62%, rgba(247,245,241,.2)), url("assets/construction-site.webp") 55% center/cover no-repeat; }
+      .hero-inner { padding-block: 90px 92px; }
+      .hero h1 { font-size: clamp(3.25rem, 16vw, 5.2rem); }
+      .hero-copy > p { max-width: 390px; font-size: .98rem; }
+      .hero-caption { padding: 9px 13px; font-size: .65rem; }
+      .intro, .heritage, .contact { padding-block: 68px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 24px; }
+      .intro-mark { width: 90px; font-size: 1.4rem; }
+      .intro-note { grid-column: auto; }
+      .business, .leadership, .impact { padding-block: 68px; }
+      .business-top { display: block; }
+      .text-link { margin: -15px 0 24px; }
+      .business-grid { grid-template-columns: 1fr; }
+      .business-card { min-height: 295px; }
+      .heritage-grid { grid-template-columns: 1fr; gap: 38px; }
+      .heritage-image, .heritage-image img { min-height: 350px; height: 350px; }
+      .heritage-badge { right: 0; }
+      .products { padding-block: 68px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .product-card img { height: 220px; }
+      .partners { padding-block: 52px; }
+      .partner-logo { min-height: 142px; grid-template-rows: 64px auto; gap: 10px; padding: 12px; }
+      .partner-logo img, .partner-wordmark { height: 64px; }
+      .partner-wordmark { font-size: 1.2rem; }
+      .people-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .person-card img { height: 220px; }
+      .person-info { padding: 14px; }
+      .person-info h3 { font-size: 1.1rem; }
+      .people-tab { padding-inline: 12px; font-size: .82rem; }
+      .impact-grid { grid-template-columns: 1fr 1fr; gap: 24px 18px; }
+      .impact-lead { grid-column: 1 / -1; }
+      .impact-stat { padding-left: 14px; }
+      .contact-panel { grid-template-columns: 1fr; gap: 28px; }
+      .footer-main, .footer-bottom { flex-direction: column; }
+      .footer-links { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="container topline-inner">
+      <span>Building trusted partnerships across Nigeria</span>
+      <a href="tel:070056464658">Call us: 0700 JOHNHOLT (0700 5646 4658)</a>
+    </div>
+  </div>
+  <header class="header">
+    <nav class="container nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="John Holt home">
+        <img src="assets/john-holt-logo.png" alt="John Holt">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span>Menu</span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#business">Our businesses</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#impact">Our impact</a></li>
+        <li><a class="nav-cta" href="#contact">Contact us <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Since 1897</span>
+          <h1>Built on trust.<br><span>Ready for</span><br>tomorrow.</h1>
+          <p>Engineering, energy, marine and project solutions that help businesses and communities move forward.</p>
+          <div class="button-row">
+            <a class="button" href="#business">Explore our businesses <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#about">Our story</a>
+          </div>
+        </div>
+      </div>
+      <span class="hero-caption">A legacy of making things work</span>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <div class="intro-mark" aria-hidden="true">JH</div>
+        <div class="intro-text">
+          <span class="eyebrow">Who we are</span>
+          <h2>Over a century of connecting people, ideas and opportunity.</h2>
+          <p>Established in 1897, John Holt has grown into a Nigerian group serving businesses and communities through a diverse range of products and services. Its work brings together engineering, equipment supply, project delivery and ongoing support.</p>
+          <p>Across its businesses, John Holt provides diesel and gas generators, air-conditioning and transformers, fire-safety equipment, warehousing, construction, boat building and agricultural exports. This breadth helps customers source practical solutions for different operational needs through one experienced group.</p>
+          <p>Each project starts with understanding what a customer needs to get done. John Holt teams combine product knowledge and hands-on expertise to help identify suitable equipment, coordinate delivery and provide support beyond installation.</p>
+          <p>That combination of experience and practical service connects the group’s long history with the needs of today’s organisations. Whether supporting power, cooling, safety or logistics, John Holt aims to build dependable working relationships that help customers keep moving.</p>
+        </div>
+        <div class="intro-note">“The eloquence of quality — since 1897.”</div>
+      </div>
+    </section>
+
+    <section class="business" id="business">
+      <div class="container">
+        <div class="business-top">
+          <div class="section-heading">
+            <span class="eyebrow">What we do</span>
+            <h2>Experience that delivers across industries.</h2>
+            <p>Specialist teams, trusted equipment and responsive support—bringing the right solutions to every project.</p>
+          </div>
+          <a class="text-link" href="#contact">Talk to our team <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="business-grid">
+          <a class="business-card" href="#contact">
+            <img src="assets/diesel-generator.webp" alt="Diesel generator installed at a work site" loading="lazy">
+            <img class="business-card-secondary" src="assets/gas-generators.webp" alt="John Holt branded generator equipment" loading="lazy">
+            <div class="business-card-content"><span>01 / Energy</span><h3>Power &amp; energy</h3><p>Power generation, energy solutions and dependable technical support.</p></div>
+          </a>
+          <a class="business-card" href="#contact">
+            <img src="assets/john-holt-air-conditioner.webp" alt="John Holt air-conditioning equipment" loading="lazy">
+            <div class="business-card-content"><span>02 / Climate</span><h3>HVAC &amp; cooling</h3><p>Comfort and cooling solutions for homes, workplaces and industry.</p></div>
+          </a>
+          <a class="business-card" href="#contact">
+            <img src="assets/almarine-boats.webp" alt="Marine boats on the water" loading="lazy">
+            <div class="business-card-content"><span>03 / Marine</span><h3>Marine services</h3><p>Boat building and marine solutions for work on the water.</p></div>
+          </a>
+          <a class="business-card" href="#contact">
+            <img src="assets/jh-fire-equipment-inspection.jpg" alt="Technician inspecting fire safety equipment" loading="lazy">
+            <div class="business-card-content"><span>04 / Safety</span><h3>Fire &amp; safety</h3><p>Specialist equipment to help protect people and critical assets.</p></div>
+          </a>
+          <a class="business-card" href="#contact">
+            <img src="assets/export-logistics-port.jpg" alt="Cargo containers at a port" loading="lazy">
+            <div class="business-card-content"><span>05 / Trade</span><h3>Trade &amp; logistics</h3><p>Warehousing, shipping services and export of agricultural commodities.</p></div>
+          </a>
+          <a class="business-card" href="#contact">
+            <img src="assets/jh-project-work.jpg" alt="Project plans laid out for review" loading="lazy">
+            <img class="business-card-secondary" src="assets/jh-solar-engineer.jpg" alt="Engineer working at a solar installation site" loading="lazy">
+            <div class="business-card-content"><span>06 / Projects</span><h3>Projects &amp; infrastructure</h3><p>Practical solutions for complex sites, facilities and operations.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="heritage">
+      <div class="container heritage-grid">
+        <div class="heritage-image">
+          <img src="assets/john-holt-warehouse.webp" alt="John Holt warehouse, ready to support business and industry" loading="lazy">
+          <div class="heritage-badge"><strong>1897</strong><span>Our story began</span></div>
+        </div>
+        <div class="heritage-copy">
+          <span class="eyebrow">Our heritage</span>
+          <h2>Rooted in experience. Focused on what’s next.</h2>
+          <p>Since 1897, John Holt has evolved alongside the changing needs of Nigerian commerce and industry. Its portfolio now spans power generation, cooling, fire and safety, warehousing, construction, marine services and exports.</p>
+          <p>From supplying equipment to supporting projects and facilities, the group brings together specialist businesses to serve a wide range of customer requirements. Its focus remains on dependable products, practical expertise and responsive service—while continuing to develop solutions for the future.</p>
+          <div class="heritage-points">
+            <div class="heritage-point"><strong>Proven experience</strong><span>A legacy built over generations.</span></div>
+            <div class="heritage-point"><strong>Local knowledge</strong><span>People and teams who understand the market.</span></div>
+            <div class="heritage-point"><strong>Trusted solutions</strong><span>Products and services for real-world needs.</span></div>
+            <div class="heritage-point"><strong>Built for tomorrow</strong><span>Partnerships that help businesses grow.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="leadership" id="leadership">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Our people</span>
+          <h2>Leadership with a long-term view.</h2>
+          <p>Meet the people represented in John Holt’s leadership portraits.</p>
+          <button class="button leadership-toggle" id="leadership-toggle" type="button" aria-expanded="false" aria-controls="leadership-content">View our leadership <span aria-hidden="true">↓</span></button>
+        </div>
+        <div id="leadership-content" hidden>
+          <div class="people-tabs" role="tablist" aria-label="Leadership group">
+            <button class="people-tab" id="board-tab" type="button" role="tab" aria-selected="true" aria-controls="board-panel">Board of directors</button>
+            <button class="people-tab" id="management-tab" type="button" role="tab" aria-selected="false" aria-controls="management-panel">Management team</button>
+          </div>
+          <div class="people-grid" id="board-panel" role="tabpanel" aria-labelledby="board-tab">
+            <article class="person-card"><img src="assets/dr-ezeh.jpg" alt="Portrait of Chief. Dr. Christopher Ikechi Ezeh, MFR" loading="lazy"><div class="person-info"><h3>Chief. Dr. Christopher Ikechi Ezeh, MFR</h3><p>Chairman, Board of Directors</p></div></article>
+            <article class="person-card"><img src="assets/adeche-okeje-management.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director, Finance</p></div></article>
+            <article class="person-card"><img src="assets/adim-jibunoh.jpeg" alt="Portrait of Mr. Adim Jibunoh" loading="lazy"><div class="person-info"><h3>Mr. Adim Jibunoh</h3><p>Non Executive Director</p></div></article>
+          </div>
+          <div class="people-grid" id="management-panel" role="tabpanel" aria-labelledby="management-tab" hidden>
+            <article class="person-card"><img src="assets/chris-ezeh.jpg" alt="Portrait of Dr. Christopher Ezeh" loading="lazy"><div class="person-info"><h3>Dr. Christopher Ezeh</h3><p>Group Managing Director</p></div></article>
+            <article class="person-card"><img src="assets/adeche-okeje.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director, Finance</p></div></article>
+            <article class="person-card"><img src="assets/ada-nkwocha.jpg" alt="Portrait of Ada Nkwocha" loading="lazy"><div class="person-info"><h3>Ada Nkwocha</h3><p>Company Secretary/Legal Adviser</p></div></article>
+            <article class="person-card"><img src="assets/kris-nwachukwu.jpg" alt="Portrait of Mr. Kris Chike Nwachukwu" loading="lazy"><div class="person-info"><h3>Mr. Kris Chike Nwachukwu</h3><p>Senior Executive &amp; National Sales Coordinator</p></div></article>
+            <article class="person-card"><img src="assets/solomon-ezeanah.jpg" alt="Portrait of Mr. Solomon Ezeanah" loading="lazy"><div class="person-info"><h3>Mr. Solomon Ezeanah</h3><p>Group Marketing Manager</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Our products</span>
+          <h2>Equipment and solutions built for the work ahead.</h2>
+          <p>Explore a selection of John Holt products for power, climate control, marine, safety and materials handling.</p>
+        </div>
+        <div class="products-grid">
+          <figure class="product-card"><img src="assets/gas-generators.webp" alt="John Holt branded power generators" loading="lazy"><figcaption><strong>Power generators</strong><span>Gas and diesel generation equipment.</span></figcaption></figure>
+          <figure class="product-card"><div class="product-card-images"><img src="assets/john-holt-standing-air-conditioner.webp" alt="Holt Star standing air conditioner" loading="lazy"><img src="assets/john-holt-air-conditioner.webp" alt="John Holt split and standing air-conditioning units" loading="lazy"></div><figcaption><strong>Air conditioning</strong><span>Cooling equipment for homes and workplaces.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/john-holt-transformers.webp" alt="John Holt transformer and power distribution equipment" loading="lazy"><figcaption><strong>Transformers</strong><span>Electrical distribution and power solutions.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/almarine-boats.webp" alt="Almarine boats for marine operations" loading="lazy"><figcaption><strong>Marine boats</strong><span>Boats and equipment for work on the water.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/rosenbauer.webp" alt="Rosenbauer fire and safety equipment" loading="lazy"><figcaption><strong>Fire &amp; safety</strong><span>Firefighting and emergency-response equipment.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/rapid-trolley.webp" alt="Rapid trolley materials-handling equipment" loading="lazy"><figcaption><strong>Materials handling</strong><span>Equipment for moving goods and supplies.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners" aria-labelledby="partners-heading">
+      <div class="container">
+        <h2 class="partners-heading" id="partners-heading">Selected clients &amp; partners</h2>
+        <p class="partners-description">A selection of client logos and product brands represented across John Holt’s businesses, from financial services and technology to fire safety and marine solutions.</p>
+        <div class="partners-grid">
+          <figure class="partner-logo"><img src="assets/fidelity-bank-logo.webp" alt="Fidelity Bank"><figcaption>Financial services</figcaption></figure>
+          <figure class="partner-logo"><img src="assets/tenece.jpg" alt="Tenece"><figcaption>Technology, managed services &amp; advisory</figcaption></figure>
+          <figure class="partner-logo"><img src="assets/nigerian-breweries.png" alt="Nigerian Breweries"><figcaption>Brewing &amp; consumer products</figcaption></figure>
+          <figure class="partner-logo"><img src="assets/ppc.webp" alt="PPC"><figcaption>Building materials</figcaption></figure>
+          <figure class="partner-logo"><span class="partner-wordmark">ANGUS FIRE</span><figcaption>Firefighting and rescue equipment</figcaption></figure>
+          <figure class="partner-logo"><span class="partner-wordmark">ROSENBAUER</span><figcaption>Fire and emergency-response solutions</figcaption></figure>
+          <figure class="partner-logo"><span class="partner-wordmark">ALMARINE</span><figcaption>Marine boats and services</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" id="impact">
+      <div class="container impact-grid">
+        <div class="impact-lead"><span class="eyebrow">The John Holt difference</span><h2>A partner for the work ahead.</h2></div>
+        <div class="impact-stat"><strong><span id="years-operation">129</span>+ years</strong><span>In operation since 1897.</span></div>
+        <div class="impact-stat"><strong>Across sectors</strong><span>Expertise spanning energy, marine, safety and more.</span></div>
+        <div class="impact-stat"><strong>People first</strong><span>Relationships and service at the heart of our work.</span></div>
+      </div>
+    </section>
+
+    <section class="careers" id="careers">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Build your career</span>
+          <h2>Careers at John Holt.</h2>
+          <p>Explore career opportunities and pathways to develop your skills and grow.</p>
+          <button class="button careers-toggle" id="careers-toggle" type="button" aria-expanded="false" aria-controls="career-details">View career opportunities <span aria-hidden="true">↓</span></button>
+        </div>
+        <div class="career-details" id="career-details" hidden>
+          <div class="career-grid">
+          <article class="career-card" id="internships" aria-labelledby="internships-heading">
+            <h3 id="internships-heading">Internships</h3>
+            <p>John Holt’s internship programme gives students an opportunity to gain field experience and take an early step into their careers, with the potential to return after completing their education.</p>
+          </article>
+          <article class="career-card" id="graduate-careers" aria-labelledby="graduate-careers-heading">
+            <h3 id="graduate-careers-heading">Graduate careers</h3>
+            <p>The graduate development programme is designed to prepare emerging talent for future management roles through a structured management trainee programme.</p>
+          </article>
+          </div>
+          <p class="roster-note">To apply, send your CV—and, for graduate applications, a cover letter—to <a href="mailto:careers@jhplc.com">careers@jhplc.com</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-panel">
+        <div>
+          <span class="eyebrow">Let’s work together</span>
+          <h2>Have a project in mind?</h2>
+          <p>Tell us what you’re looking for. Our team will help connect you with the right John Holt business.</p>
+          <div class="button-row">
+            <a class="button" href="mailto:marketingteam@jhplc.com">Send us an email <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="https://wa.me/23470056464658" target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item"><span>Call</span><a href="tel:070056464658">0700 JOHNHOLT<br>(0700 5646 4658)</a></div>
+          <div class="contact-item"><span>Email</span><a href="mailto:marketingteam@jhplc.com">marketingteam@jhplc.com</a></div>
+          <div class="contact-item"><span>WhatsApp</span><a href="https://wa.me/23470056464658" target="_blank" rel="noopener noreferrer">Message John Holt</a></div>
+          <div class="contact-item"><span>Address</span><a href="https://www.google.com/maps/search/?api=1&amp;query=11B+Ilabere%2C+Ikoyi%2C+Lagos%2C+Nigeria" target="_blank" rel="noopener noreferrer">11B Ilabere, Ikoyi, Lagos, Nigeria</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="#home" aria-label="John Holt home"><img src="assets/john-holt-logo.png" alt="John Holt"></a>
+          <p>A legacy of quality and trusted partnerships, helping businesses and communities move forward.</p>
+        </div>
+        <div class="footer-links" aria-label="Footer navigation">
+          <a href="#about">About John Holt</a><a href="#business">Our businesses</a>
+          <a href="#leadership">Leadership</a><a href="#products">Products</a>
+          <a href="#careers">Careers</a>
+          <a href="#impact">Our impact</a>
+          <a href="#contact">Contact</a><a href="#home">Back to top ↑</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> John Holt. All rights reserved.</span><span>Built on trust. Ready for tomorrow.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      navLinks.classList.toggle("is-open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuButton.setAttribute("aria-expanded", "false");
+        navLinks.classList.remove("is-open");
+      }
+    });
+
+    const leadershipTabs = document.querySelectorAll(".people-tab");
+    const leadershipToggle = document.getElementById("leadership-toggle");
+    const leadershipContent = document.getElementById("leadership-content");
+
+    const showLeadership = () => {
+      leadershipContent.hidden = false;
+      leadershipToggle.setAttribute("aria-expanded", "true");
+    };
+
+    leadershipToggle.addEventListener("click", () => {
+      const isExpanded = leadershipToggle.getAttribute("aria-expanded") === "true";
+      leadershipContent.hidden = isExpanded;
+      leadershipToggle.setAttribute("aria-expanded", String(!isExpanded));
+    });
+
+    document.querySelectorAll('a[href="#leadership"]').forEach((link) => {
+      link.addEventListener("click", showLeadership);
+    });
+
+    const careersToggle = document.getElementById("careers-toggle");
+    const careerDetails = document.getElementById("career-details");
+
+    careersToggle.addEventListener("click", () => {
+      const isExpanded = careersToggle.getAttribute("aria-expanded") === "true";
+      careerDetails.hidden = isExpanded;
+      careersToggle.setAttribute("aria-expanded", String(!isExpanded));
+      careersToggle.firstChild.textContent = isExpanded ? "View career opportunities " : "Hide career opportunities ";
+    });
+
+    leadershipTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        leadershipTabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+        document.querySelectorAll('[role="tabpanel"]').forEach((panel) => {
+          panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+        });
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("years-operation").textContent = new Date().getFullYear() - 1897;
+  </script>
+</body>
+</html> 
