@@ -47,14 +47,14 @@
     .menu-toggle { display: none; padding: 10px; border: 1px solid var(--line); color: var(--ink); background: #fff; cursor: pointer; }
 
     .hero { position: relative; overflow: hidden; min-height: 590px; display: grid; align-items: center; background: #f3f0eb; }
-    .hero::before { position: absolute; inset: 0 0 0 39%; background: linear-gradient(90deg, #f3f0eb 0%, rgba(243,240,235,.92) 7%, rgba(243,240,235,.1) 43%, rgba(20,17,16,.08) 100%), url("assets/construction-site.webp") center 47%/cover no-repeat; content: ""; }
+    .hero::before { position: absolute; inset: 0 0 0 39%; background: linear-gradient(90deg, #f3f0eb 0%, rgba(243,240,235,.92) 7%, rgba(243,240,235,.1) 43%, rgba(20,17,16,.08) 100%), linear-gradient(135deg, rgba(168,15,25,.10), rgba(0,0,0,.12)), radial-gradient(circle at 20% 20%, rgba(255,255,255,.6), transparent 32%); content: ""; }
     .hero-inner { position: relative; z-index: 1; padding-block: 92px 100px; }
     .hero-copy { max-width: 600px; }
     .hero h1 { margin: 18px 0; font: 400 clamp(3.3rem, 7vw, 6.2rem)/.99 var(--serif); letter-spacing: -.055em; }
     .hero h1 span { color: var(--red); }
     .hero-copy > p { max-width: 480px; margin: 0; color: #555; font-size: 1.06rem; }
     .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 1px solid var(--red); color: #fff; background: var(--red); font-size: .83rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 1px solid var(--red); color: #fff; background: var(--red); font-size: .82rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
     .button:hover { transform: translateY(-2px); background: var(--red-dark); }
     .button-outline { color: var(--ink); border-color: #bcb7b0; background: transparent; }
     .button-outline:hover { color: #fff; border-color: var(--red); background: var(--red); }
@@ -75,7 +75,7 @@
     .business-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .business-card { position: relative; min-height: 280px; overflow: hidden; color: #fff; background: #393939; text-decoration: none; }
     .business-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-    .business-card .business-card-secondary { z-index: 1; inset: 16px 16px auto auto; width: 38%; height: 42%; border: 3px solid #fff; background: #fff; object-fit: contain; box-shadow: 0 4px 16px rgba(0,0,0,.3); }
+    .business-card .business-card-secondary { z-index: 1; inset: 16px 16px auto auto; width: 38%; height: 42%; border: 3px solid #fff; background: #fff; object-fit: contain; box-shadow: 0 4px 16px rgba(0,0,0,.18); }
     .business-card::after { position: absolute; inset: 25% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.8)); content: ""; }
     .business-card:hover img { transform: scale(1.055); }
     .business-card-content { position: absolute; z-index: 2; right: 24px; bottom: 23px; left: 24px; }
@@ -129,7 +129,7 @@
     .partners-heading { margin: 0 0 28px; color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-align: center; text-transform: uppercase; }
     .partners-description { max-width: 650px; margin: -14px auto 30px; color: var(--muted); font-size: .92rem; text-align: center; }
     .partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; gap: 20px; }
-    .partner-logo { display: grid; min-height: 174px; grid-template-rows: 84px auto; place-items: center; gap: 12px; margin: 0; padding: 22px; border: 1px solid #eee9e3; border-radius: 12px; background: linear-gradient(145deg, #fff, #fbfaf8); text-align: center; box-shadow: 0 8px 24px rgba(32,32,32,.06); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .partner-logo { display: grid; min-height: 174px; grid-template-rows: 84px auto; place-items: center; gap: 12px; margin: 0; padding: 22px; border: 1px solid #eee9e3; border-radius: 12px; background: linear-gradient(180deg, #fff, #faf8f5); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
     .partner-logo:hover { transform: translateY(-3px); border-color: #e5d5d3; box-shadow: 0 14px 30px rgba(32,32,32,.1); }
     .partner-logo img { width: min(100%, 220px); height: 84px; object-fit: contain; }
     .partner-logo figcaption { color: var(--muted); font-size: .78rem; line-height: 1.45; }
@@ -202,7 +202,7 @@
       .nav-links a { display: block; padding: 12px 8px; font-size: .9rem; }
       .nav-links .nav-cta { margin-top: 6px; padding-inline: 14px; }
       .hero { min-height: 620px; align-items: end; }
-      .hero::before { inset: 0; background: linear-gradient(90deg, rgba(247,245,241,.96), rgba(247,245,241,.81) 62%, rgba(247,245,241,.2)), url("assets/construction-site.webp") 55% center/cover no-repeat; }
+      .hero::before { inset: 0; background: linear-gradient(90deg, rgba(247,245,241,.96), rgba(247,245,241,.81) 62%, rgba(247,245,241,.2)), linear-gradient(135deg, rgba(168,15,25,.08), rgba(0,0,0,.18)); }
       .hero-inner { padding-block: 90px 92px; }
       .hero h1 { font-size: clamp(3.25rem, 16vw, 5.2rem); }
       .hero-copy > p { max-width: 390px; font-size: .98rem; }
@@ -250,6 +250,7 @@
       <a href="tel:070056464658">Call us: 0700 JOHNHOLT (0700 5646 4658)</a>
     </div>
   </div>
+
   <header class="header">
     <nav class="container nav-wrap" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="John Holt home">
@@ -292,10 +293,10 @@
         <div class="intro-text">
           <span class="eyebrow">Who we are</span>
           <h2>Over a century of connecting people, ideas and opportunity.</h2>
-          <p>Established in 1897, John Holt has grown into a Nigerian group serving businesses and communities through a diverse range of products and services. Its work brings together engineering, equipment supply, project delivery and ongoing support.</p>
-          <p>Across its businesses, John Holt provides diesel and gas generators, air-conditioning and transformers, fire-safety equipment, warehousing, construction, boat building and agricultural exports. This breadth helps customers source practical solutions for different operational needs through one experienced group.</p>
-          <p>Each project starts with understanding what a customer needs to get done. John Holt teams combine product knowledge and hands-on expertise to help identify suitable equipment, coordinate delivery and provide support beyond installation.</p>
-          <p>That combination of experience and practical service connects the group’s long history with the needs of today’s organisations. Whether supporting power, cooling, safety or logistics, John Holt aims to build dependable working relationships that help customers keep moving.</p>
+          <p>Established in 1897, John Holt has grown into a Nigerian group serving businesses and communities through a diverse range of products and services. Its work brings together engineering, energy, marine, safety, logistics and project support across the country.</p>
+          <p>Across its businesses, John Holt provides diesel and gas generators, air-conditioning and transformers, fire-safety equipment, warehousing, construction, boat building and agricultural export services.</p>
+          <p>Each project starts with understanding what a customer needs to get done. John Holt teams combine product knowledge and hands-on expertise to help identify suitable equipment, coordinate delivery and support installation or ongoing operation.</p>
+          <p>That combination of experience and practical service connects the group’s long history with the needs of today’s organisations. Whether supporting power, cooling, safety or logistics, John Holt helps businesses keep moving.</p>
         </div>
         <div class="intro-note">“The eloquence of quality — since 1897.”</div>
       </div>
@@ -351,8 +352,8 @@
         <div class="heritage-copy">
           <span class="eyebrow">Our heritage</span>
           <h2>Rooted in experience. Focused on what’s next.</h2>
-          <p>Since 1897, John Holt has evolved alongside the changing needs of Nigerian commerce and industry. Its portfolio now spans power generation, cooling, fire and safety, warehousing, construction, marine services and exports.</p>
-          <p>From supplying equipment to supporting projects and facilities, the group brings together specialist businesses to serve a wide range of customer requirements. Its focus remains on dependable products, practical expertise and responsive service—while continuing to develop solutions for the future.</p>
+          <p>Since 1897, John Holt has evolved alongside the changing needs of Nigerian commerce and industry. Its portfolio now spans power generation, cooling, fire and safety, warehousing, construction, marine and agricultural support services.</p>
+          <p>From supplying equipment to supporting projects and facilities, the group brings together specialist businesses to serve a wide range of customer requirements. Its focus remains on dependable service, practical solutions and long-term partnerships.</p>
           <div class="heritage-points">
             <div class="heritage-point"><strong>Proven experience</strong><span>A legacy built over generations.</span></div>
             <div class="heritage-point"><strong>Local knowledge</strong><span>People and teams who understand the market.</span></div>
@@ -377,16 +378,17 @@
             <button class="people-tab" id="management-tab" type="button" role="tab" aria-selected="false" aria-controls="management-panel">Management team</button>
           </div>
           <div class="people-grid" id="board-panel" role="tabpanel" aria-labelledby="board-tab">
-            <article class="person-card"><img src="assets/dr-ezeh.jpg" alt="Portrait of Chief. Dr. Christopher Ikechi Ezeh, MFR" loading="lazy"><div class="person-info"><h3>Chief. Dr. Christopher Ikechi Ezeh, MFR</h3><p>Chairman, Board of Directors</p></div></article>
-            <article class="person-card"><img src="assets/adeche-okeje-management.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director, Finance</p></div></article>
+            <article class="person-card"><img src="assets/dr-ezeh.jpg" alt="Portrait of Chief. Dr. Christopher Ikechi Ezeh, MFR" loading="lazy"><div class="person-info"><h3>Chief. Dr. Christopher Ikechi Ezeh, MFR</h3><p>Chairman</p></div></article>
+            <article class="person-card"><img src="assets/adeche-okeje-management.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director</p></div></article>
             <article class="person-card"><img src="assets/adim-jibunoh.jpeg" alt="Portrait of Mr. Adim Jibunoh" loading="lazy"><div class="person-info"><h3>Mr. Adim Jibunoh</h3><p>Non Executive Director</p></div></article>
+            <article class="person-card"><img src="assets/solomon-ezeanah.jpg" alt="Portrait of Mr. Solomon Ezeanah" loading="lazy"><div class="person-info"><h3>Mr. Solomon Ezeanah</h3><p>Non Executive Director</p></div></article>
           </div>
           <div class="people-grid" id="management-panel" role="tabpanel" aria-labelledby="management-tab" hidden>
             <article class="person-card"><img src="assets/chris-ezeh.jpg" alt="Portrait of Dr. Christopher Ezeh" loading="lazy"><div class="person-info"><h3>Dr. Christopher Ezeh</h3><p>Group Managing Director</p></div></article>
-            <article class="person-card"><img src="assets/adeche-okeje.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director, Finance</p></div></article>
-            <article class="person-card"><img src="assets/ada-nkwocha.jpg" alt="Portrait of Ada Nkwocha" loading="lazy"><div class="person-info"><h3>Ada Nkwocha</h3><p>Company Secretary/Legal Adviser</p></div></article>
-            <article class="person-card"><img src="assets/kris-nwachukwu.jpg" alt="Portrait of Mr. Kris Chike Nwachukwu" loading="lazy"><div class="person-info"><h3>Mr. Kris Chike Nwachukwu</h3><p>Senior Executive &amp; National Sales Coordinator</p></div></article>
-            <article class="person-card"><img src="assets/solomon-ezeanah.jpg" alt="Portrait of Mr. Solomon Ezeanah" loading="lazy"><div class="person-info"><h3>Mr. Solomon Ezeanah</h3><p>Group Marketing Manager</p></div></article>
+            <article class="person-card"><img src="assets/adeche-okeje.jpg" alt="Portrait of Mr Adeche Boyi Okeje" loading="lazy"><div class="person-info"><h3>Mr Adeche Boyi Okeje</h3><p>Executive Director</p></div></article>
+            <article class="person-card"><img src="assets/ada-nkwocha.jpg" alt="Portrait of Ada Nkwocha" loading="lazy"><div class="person-info"><h3>Ada Nkwocha</h3><p>Company Secretary / Legal Adviser</p></div></article>
+            <article class="person-card"><img src="assets/kris-nwachukwu.jpg" alt="Portrait of Mr. Kris Chike Nwachukwu" loading="lazy"><div class="person-info"><h3>Mr. Kris Chike Nwachukwu</h3><p>Senior Executive</p></div></article>
+            <article class="person-card"><img src="assets/solomon-ezeanah.jpg" alt="Portrait of Mr. Solomon Ezeanah" loading="lazy"><div class="person-info"><h3>Mr. Solomon Ezeanah</h3><p>Group Marketing Lead</p></div></article>
           </div>
         </div>
       </div>
@@ -400,12 +402,12 @@
           <p>Explore a selection of John Holt products for power, climate control, marine, safety and materials handling.</p>
         </div>
         <div class="products-grid">
-          <figure class="product-card"><img src="assets/gas-generators.webp" alt="John Holt branded power generators" loading="lazy"><figcaption><strong>Power generators</strong><span>Gas and diesel generation equipment.</span></figcaption></figure>
-          <figure class="product-card"><div class="product-card-images"><img src="assets/john-holt-standing-air-conditioner.webp" alt="Holt Star standing air conditioner" loading="lazy"><img src="assets/john-holt-air-conditioner.webp" alt="John Holt split and standing air-conditioning units" loading="lazy"></div><figcaption><strong>Air conditioning</strong><span>Cooling equipment for homes and workplaces.</span></figcaption></figure>
-          <figure class="product-card"><img src="assets/john-holt-transformers.webp" alt="John Holt transformer and power distribution equipment" loading="lazy"><figcaption><strong>Transformers</strong><span>Electrical distribution and power solutions.</span></figcaption></figure>
-          <figure class="product-card"><img src="assets/almarine-boats.webp" alt="Almarine boats for marine operations" loading="lazy"><figcaption><strong>Marine boats</strong><span>Boats and equipment for work on the water.</span></figcaption></figure>
-          <figure class="product-card"><img src="assets/rosenbauer.webp" alt="Rosenbauer fire and safety equipment" loading="lazy"><figcaption><strong>Fire &amp; safety</strong><span>Firefighting and emergency-response equipment.</span></figcaption></figure>
-          <figure class="product-card"><img src="assets/rapid-trolley.webp" alt="Rapid trolley materials-handling equipment" loading="lazy"><figcaption><strong>Materials handling</strong><span>Equipment for moving goods and supplies.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/gas-generators.webp" alt="John Holt branded power generators" loading="lazy"><figcaption><strong>Power generators</strong><span>Gas and diesel generators for dependable power.</span></figcaption></figure>
+          <figure class="product-card"><div class="product-card-images"><img src="assets/john-holt-standing-air-conditioner.webp" alt="Holt Star standing air conditioner" loading="lazy"><img src="assets/john-holt-air-conditioner.webp" alt="John Holt air-conditioning unit" loading="lazy"></div><figcaption><strong>HVAC systems</strong><span>Cooling and climate control solutions for every space.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/john-holt-transformers.webp" alt="John Holt transformer and power distribution equipment" loading="lazy"><figcaption><strong>Transformers</strong><span>Distribution equipment for reliable power supply.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/almarine-boats.webp" alt="Almarine boats for marine operations" loading="lazy"><figcaption><strong>Marine boats</strong><span>Boats and equipment for coastal and inland water support.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/rosenbauer.webp" alt="Rosenbauer fire and safety equipment" loading="lazy"><figcaption><strong>Fire &amp; safety</strong><span>Firefighting and emergency-response solutions.</span></figcaption></figure>
+          <figure class="product-card"><img src="assets/rapid-trolley.webp" alt="Rapid trolley materials-handling equipment" loading="lazy"><figcaption><strong>Materials handling</strong><span>Equipment designed for ready movement and efficient operations.</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -445,14 +447,14 @@
         </div>
         <div class="career-details" id="career-details" hidden>
           <div class="career-grid">
-          <article class="career-card" id="internships" aria-labelledby="internships-heading">
-            <h3 id="internships-heading">Internships</h3>
-            <p>John Holt’s internship programme gives students an opportunity to gain field experience and take an early step into their careers, with the potential to return after completing their education.</p>
-          </article>
-          <article class="career-card" id="graduate-careers" aria-labelledby="graduate-careers-heading">
-            <h3 id="graduate-careers-heading">Graduate careers</h3>
-            <p>The graduate development programme is designed to prepare emerging talent for future management roles through a structured management trainee programme.</p>
-          </article>
+            <article class="career-card" id="internships" aria-labelledby="internships-heading">
+              <h3 id="internships-heading">Internships</h3>
+              <p>John Holt’s internship programme gives students an opportunity to gain field experience and take an early step into their careers, with the potential to return after completing their studies.</p>
+            </article>
+            <article class="career-card" id="graduate-careers" aria-labelledby="graduate-careers-heading">
+              <h3 id="graduate-careers-heading">Graduate careers</h3>
+              <p>The graduate development programme is designed to prepare emerging talent for future management roles through a structured management trainee programme.</p>
+            </article>
           </div>
           <p class="roster-note">To apply, send your CV—and, for graduate applications, a cover letter—to <a href="mailto:careers@jhplc.com">careers@jhplc.com</a>.</p>
         </div>
@@ -500,6 +502,38 @@
   </footer>
 
   <script>
+    const imageFallback = (label) => {
+      const safeLabel = (label || 'John Holt').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="${safeLabel}">
+          <defs>
+            <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#f4efe9"/>
+              <stop offset="100%" stop-color="#ead7d0"/>
+            </linearGradient>
+          </defs>
+          <rect width="1200" height="800" fill="url(#bg)"/>
+          <rect x="80" y="80" width="1040" height="640" rx="24" fill="rgba(168,15,25,0.08)" stroke="rgba(168,15,25,0.35)"/>
+          <circle cx="270" cy="250" r="110" fill="rgba(168,15,25,0.12)"/>
+          <circle cx="920" cy="560" r="150" fill="rgba(32,32,32,0.08)"/>
+          <rect x="210" y="330" width="780" height="150" rx="16" fill="rgba(255,255,255,0.70)"/>
+          <text x="600" y="395" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#a80f19">${safeLabel}</text>
+          <text x="600" y="450" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#444">Image placeholder</text>
+        </svg>
+      `;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    };
+
+    document.querySelectorAll('img').forEach((img) => {
+      const label = (img.getAttribute('alt') || img.getAttribute('title') || 'John Holt').trim();
+      img.addEventListener('error', () => {
+        if (!img.dataset.placeholderFallback) {
+          img.dataset.placeholderFallback = 'true';
+          img.src = imageFallback(label);
+        }
+      }, { once: true });
+    });
+
     const menuButton = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
 
@@ -558,4 +592,4 @@
     document.getElementById("years-operation").textContent = new Date().getFullYear() - 1897;
   </script>
 </body>
-</html> 
+</html>
